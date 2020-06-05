@@ -6,10 +6,16 @@ void game() {
     GameObject obj = objects.get(i);
     obj.show();
     obj.act();
-    if (obj.isDead
-    i++;dead
+    if (obj.isDead()) {
+      objects.remove(i);
+    } else {
+    i++;
   }
- 
+  }
+  
+  if (frameCount % 60 ==0) { //modulus, mod
+  objects.add(new Enemy());
+  }
 }
 
 void gameClicks() {
